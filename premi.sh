@@ -906,7 +906,7 @@ EOF
     chmod +x /etc/rc.local
     
     AUTOREB=$(cat /home/daily_reboot)
-    SETT=11
+    SETT=03
     if [ $AUTOREB -gt $SETT ]; then
         TIME_DATE="PM"
     else
