@@ -712,13 +712,13 @@ tls_starttls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 
 account default
-host smtp.gmail.com
+host panelstvpn@gmail.com
 port 587
 auth on
 user mohagungsetiawan3@gmail.com
 from mohagungsetiawan3@gmail.com
 password 21maret2022
-logfile ~/.msmtp.log
+logfile ~/.mpanelstvpn.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 wget -q -O /etc/ipserver "${REPO}limit/ipserver" && bash /etc/ipserver
