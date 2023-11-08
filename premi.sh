@@ -11,7 +11,7 @@ restart_system() {
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>────────────────────</code>
-<b>⚡AUTOSCRIPT PREMIUM⚡</b>
+<b>✨AUTOSCRIPT PREMIUM✨</b>
 <code>────────────────────</code>
 <code>ID     : </code><code>$USRSC</code>
 <code>Domain : </code><code>$domain</code>
