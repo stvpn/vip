@@ -892,14 +892,14 @@ cat >/etc/cron.d/xp_all <<-END
     cat >/etc/cron.d/daily_reboot <<-END
 		SHELL=/bin/sh
 		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-		0 5 * * * root /sbin/reboot
+		0 3 * * * root /sbin/reboot
 	END
 
     echo "*/1 * * * * root echo -n > /var/log/nginx/access.log" >/etc/cron.d/log.nginx
     echo "*/1 * * * * root echo -n > /var/log/xray/access.log" >>/etc/cron.d/log.xray
     service cron restart
     cat >/home/daily_reboot <<-END
-		3
+		03
 	END
 
 cat >/etc/systemd/system/rc-local.service <<EOF
@@ -932,7 +932,7 @@ EOF
     chmod +x /etc/rc.local
     
     AUTOREB=$(cat /home/daily_reboot)
-    SETT=11
+    SETT=03
     if [ $AUTOREB -gt $SETT ]; then
         TIME_DATE="PM"
     else
