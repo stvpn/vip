@@ -58,7 +58,7 @@ clear;clear;clear
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo -e "  Welcome To Agung Tunneling ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
 echo -e " This Will Quick Setup VPN Server On Your Server"
-echo -e "  Auther : ${green}Agung vpn® ${NC}${YELLOW}(${NC} ${green} Yass vpn Tunneling ${NC}${YELLOW})${NC}"
+echo -e "  Auther : ${green}Agung vpn® ${NC}${YELLOW}(${NC} ${green}Agung Tunneling ${NC}${YELLOW})${NC}"
 echo -e " © Recode By My Self Agung Tunneling${YELLOW}(${NC} 2023 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
@@ -715,15 +715,23 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user oceantestdigital@gmail.com
-from oceantestdigital@gmail.com
-password jokerman77 
+user bckupvpns@gmail.com
+from bckupvpns@gmail.com
+password Yangbaru1 
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
-wget -q -O /etc/ipserver "${REPO}limit/ipserver" && bash /etc/ipserver
-print_success "Backup Server"
-}
+cd /usr/bin
+wget -O autobackup "https://raw.githubusercontent.com/stvpn/vip/main/izin"
+wget -O backup "https://raw.githubusercontent.com/stvpn/vip/main/izin"
+wget -O restore "https://raw.githubusercontent.com/stvpn/vip/main/izin"
+wget -O strt "https://raw.githubusercontent.com/stvpn/vip/main/izin"
+chmod +x autobackup
+chmod +x backup
+chmod +x restore
+chmod +x strt
+cd
+rm -f /root/premi.sh
 
 clear
 function ins_swab(){
