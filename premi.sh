@@ -726,12 +726,6 @@ wget -O autobackup "https://raw.githubusercontent.com/stvpn/vip/main/izin"
 wget -O backup "https://raw.githubusercontent.com/stvpn/vip/main/izin"
 wget -O restore "https://raw.githubusercontent.com/stvpn/vip/main/izin"
 wget -O strt "https://raw.githubusercontent.com/stvpn/vip/main/izin"
-chmod +x autobackup
-chmod +x backup
-chmod +x restore
-chmod +x strt
-cd
-rm -f /root/premi.sh
 
 clear
 function ins_swab(){
