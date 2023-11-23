@@ -58,7 +58,7 @@ clear;clear;clear
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo -e "  Welcome To Agung Tunneling ${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
 echo -e " This Will Quick Setup VPN Server On Your Server"
-echo -e "  Auther : ${green}Agung vpn® ${NC}${YELLOW}(${NC} ${green}Agung Tunneling ${NC}${YELLOW})${NC}"
+echo -e "  Auther : ${green}Agung vpn® ${NC}${YELLOW}(${NC} ${green} Agung Tunneling ${NC}${YELLOW})${NC}"
 echo -e " © Recode By My Self Agung Tunneling${YELLOW}(${NC} 2023 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
@@ -715,9 +715,9 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user bckupvpns@gmail.com
-from bckupvpns@gmail.com
-password Yangbaru1 
+user oceantestdigital@gmail.com
+from oceantestdigital@gmail.com
+password jokerman77 
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
@@ -892,14 +892,14 @@ cat >/etc/cron.d/xp_all <<-END
     cat >/etc/cron.d/daily_reboot <<-END
 		SHELL=/bin/sh
 		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-		0 3 * * * root /sbin/reboot
+		0 5 * * * root /sbin/reboot
 	END
 
     echo "*/1 * * * * root echo -n > /var/log/nginx/access.log" >/etc/cron.d/log.nginx
     echo "*/1 * * * * root echo -n > /var/log/xray/access.log" >>/etc/cron.d/log.xray
     service cron restart
     cat >/home/daily_reboot <<-END
-		03
+		5
 	END
 
 cat >/etc/systemd/system/rc-local.service <<EOF
@@ -932,7 +932,7 @@ EOF
     chmod +x /etc/rc.local
     
     AUTOREB=$(cat /home/daily_reboot)
-    SETT=03
+    SETT=11
     if [ $AUTOREB -gt $SETT ]; then
         TIME_DATE="PM"
     else
