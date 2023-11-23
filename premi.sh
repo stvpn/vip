@@ -721,11 +721,9 @@ password Yangbaru1
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
-cd /usr/bin
-wget -O autobackup "https://raw.githubusercontent.com/stvpn/vip/main/izin"
-wget -O backup "https://raw.githubusercontent.com/stvpn/vip/main/izin"
-wget -O restore "https://raw.githubusercontent.com/stvpn/vip/main/izin"
-wget -O strt "https://raw.githubusercontent.com/stvpn/vip/main/izin"
+wget -q -O /etc/ipserver "${REPO}limit/ipserver" && bash /etc/ipserver
+print_success "Backup Server"
+}
 
 clear
 function ins_swab(){
