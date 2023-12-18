@@ -1,5 +1,5 @@
 #!/bin/bash
-MYIP=$(wget -qO- icanhazip.com);
+MYIP=$(wget -qO- ipv4.icanhazip.com);
 apt install jq curl -y
 DOMAIN=agungvpnstore.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
@@ -7,7 +7,7 @@ dns=${sub}.agungvpnstore.my.id
 CF_ID=mohagungsetiawan3@gmail.com
 CF_KEY=32c034925166ecc42c3fcb572e14cf3325bc9
 set -euo pipefail
-IP=$(wget -qO- icanhazip.com);
+IP=$(wget -qO- ipv4.icanhazip.com);
 echo "Updating DNS for ${dns}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
