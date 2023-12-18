@@ -1,9 +1,10 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 apt install jq curl -y
-DOMAIN=agungvpnstore.my.id
+read -p "Masukan Domain (contoh : Dragon)" domen
+DOMAIN=mytun.cloud
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.agungvpnstore.my.id
+dns=${sub}.mytun.cloud
 CF_ID=mohagungsetiawan3@gmail.com
 CF_KEY=32c034925166ecc42c3fcb572e14cf3325bc9
 set -euo pipefail
