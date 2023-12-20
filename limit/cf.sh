@@ -1,13 +1,15 @@
 #!/bin/bash
-MYIP=$(wget -qO- ipv4.icanhazip.com);
+MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
-DOMAIN=agungvpnstore.my.id
-sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.agungvpnstore.my.id
-CF_ID=mohagungsetiawan3@gmail.com
-CF_KEY=32c034925166ecc42c3fcb572e14cf3325bc9
+read -p "Masukan Domain (contoh : KLMPK)" domen
+DOMAIN=mypremium.biz.id
+sub=${domen}
+#(</dev/urandom tr -dc a-z0-9 | head -c5)
+dns=${sub}.mypremium.biz.id
+CF_ID=andyyuda41@gmail.com
+CF_KEY=0d626234700bad388d6d07b49c42901445d1c
 set -euo pipefail
-IP=$(wget -qO- ipv4.icanhazip.com);
+IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
@@ -32,8 +34,10 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      -H "X-Auth-Key: ${CF_KEY}" \
      -H "Content-Type: application/json" \
      --data '{"type":"A","name":"'${dns}'","content":"'${IP}'","ttl":120,"proxied":false}')
-echo "Host : $SUB_DOMAIN"
-echo "IP=" >> /var/lib/kyt/ipvps.conf
-echo $dns > /etc/xray/domain
-echo $dns > /root/domain
-rm -f /root/cf.sh
+echo "$dns" > /root/domain
+echo "$dns" > /root/scdomain
+echo "$dns" > /etc/xray/domain
+echo "$dns" > /etc/v2ray/domain
+echo "$dns" > /etc/xray/scdomain
+echo "IP=$dns" > /var/lib/kyt/ipvps.conf
+cd
