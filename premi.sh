@@ -281,9 +281,9 @@ clear
 echo -e "   |\e[1;32mPlease Select a Domain Type Below \e[0m|"
 echo -e "   '----------------------------------'"
 echo -e "     \e[1;32m1)\e[0m Domain Sendiri"
-echo -e "     \e[1;32m2)\e[0m Gunakan Domain Random"
+echo -e "     \e[1;32m2)\e[0m Gunakan Domain Random Khusus Digital ocean ISP LAIN ✖️ "
 echo -e "   ------------------------------------"
-read -p "   Please select numbers 1 or numbers 2 (Random) : " host
+read -p "   Please select numbers 1 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
 echo -e "   \e[1;32mPlease Enter Your Subdomain $NC"
@@ -299,6 +299,8 @@ rm -f /root/cf.sh
 clear
 else
 print_install "Random Subdomain/Domain is Used"
+wget ${REPO}ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+rm -f /root/cf.sh
 clear
     fi
 }
